@@ -1,17 +1,17 @@
 /* The page is NOT responsive. You can implement responsiveness yourself if you wanna have some fun 😃 */
 
 :root {
-  --color-primary: #5ec576;
-  --color-secondary: #ffcb03;
-  --color-tertiary: #ff585f;
-  --color-primary-darker: #4bbb7d;
-  --color-secondary-darker: #ffbb00;
-  --color-tertiary-darker: #fd424b;
-  --color-primary-opacity: #5ec5763a;
-  --color-secondary-opacity: #ffcd0331;
-  --color-tertiary-opacity: #ff58602d;
-  --gradient-primary: linear-gradient(to top left, #39b385, #9be15d);
-  --gradient-secondary: linear-gradient(to top left, #ffb003, #ffcb03);
+  --color-primary: #364f9e;
+  --color-secondary: #569fd9;
+  --color-tertiary: #5dd8e1;
+  --color-primary-darker: #283a74;
+  --color-secondary-darker: #457aa5;
+  --color-tertiary-darker: #44989e;
+  --color-primary-opacity: #364f9e3a;
+  --color-secondary-opacity: #569fd931;
+  --color-tertiary-opacity: #5dd8e12d;
+  --gradient-primary: linear-gradient(to top left, #364f9e, #5dd8e1);
+  --gradient-secondary: linear-gradient(to top left, #569fd9, #5dd8e1);
 }
 
 * {
@@ -68,6 +68,7 @@ body {
 .btn {
   display: inline-block;
   background-color: var(--color-primary);
+  color: white;
   font-size: 1.6rem;
   font-family: inherit;
   font-weight: 500;
@@ -124,6 +125,16 @@ img {
   z-index: 100;
 }
 
+.rightNav {
+  display: flex;
+  align-items: center;
+}
+
+.rightTitle {
+  font-size: 3rem;
+  padding-bottom: 1.5rem;
+}
+
 /* nav and stickly class at the same time */
 .nav.sticky {
   position: fixed;
@@ -160,14 +171,16 @@ img {
   padding: 0.8rem 2.5rem;
   border-radius: 3rem;
   background-color: var(--color-primary);
-  color: #222;
+  /* color: #222; */
+  color: white;
 }
 
 .nav__link--btn:hover,
 .nav__link--btn:active {
   color: inherit;
   background-color: var(--color-primary-darker);
-  color: #333;
+  /* color: #333; */
+  color: white;
 }
 
 /* HEADER */
@@ -224,8 +237,9 @@ h4 {
   width: 100%;
   z-index: -1;
   opacity: 0.7;
-  transform: scale(1.07, 1.05) skewX(-15deg);
+  transform: scale(1.07, 1.05) skewX(15deg);
   background-image: var(--gradient-primary);
+  border-radius: 8px;
 }
 
 /* FEATURES */
@@ -570,7 +584,7 @@ h4 {
 }
 
 .footer__logo {
-  height: 5rem;
+  height: 18rem;
   display: block;
   margin: 0 auto;
   margin-bottom: 5rem;
