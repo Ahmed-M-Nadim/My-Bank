@@ -50,11 +50,6 @@ buttonOpenModal.forEach((btn) => {
 ////////////////////////////////////////////////////////////////////////////////
 //====== Scroll Button======//
 buttonScroll.addEventListener("click", function () {
-  // const scrollFeatures = section1Features.getBoundingClientRect();
-  // window.scrollTo(
-  //   scrollFeatures.left + window.pageXOffset,
-  //   scrollFeatures.top + window.pageYOffset
-  // );
   section1Features.scrollIntoView({ behavior: "smooth" });
 });
 //////////////////////////////////////// ////////////////////////////////////////
