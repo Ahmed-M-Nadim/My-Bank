@@ -12,35 +12,16 @@ let myNewDay = Date();
 console.log(myNewDay);
 ////////////////////////////////////////
 
-// Modal window
-
-// const openModal = function () {
-//   modal.classList.remove("hidden");
-//   overlay.classList.remove("hidden");
-// };
-
-// const closeModal = function () {
-//   modal.classList.add("hidden");
-//   overlay.classList.add("hidden");
-// };
-
-// for (let i = 0; i < btnsOpenModal.length; i++)
-//   btnsOpenModal[i].addEventListener("click", openModal);
-
-// btnCloseModal.addEventListener("click", closeModal);
-// overlay.addEventListener("click", closeModal);
-
-// document.addEventListener("keydown", function (e) {
-//   if (e.key === "Escape" && !modal.classList.contains("hidden")) {
-//     closeModal();
-//   }
-// });
 ////////////////////////////////////////////////////////////////////////////////
 //======Create Variable======//
 const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
 const buttonOpenModal = document.querySelectorAll(".btn--show-modal");
 const buttonCloseModal = document.querySelector(".btn--close-modal");
+const buttonScroll = document.querySelector(".btn--scroll-to");
+const section1Features = document.querySelector("#section--1");
+
+//////////////////////////////////////// ////////////////////////////////////////
 
 //======Create Global Function For Modal======//
 //======Close Button======//
@@ -55,8 +36,10 @@ document.addEventListener("keydown", (e) => {
   }
 });
 overlay.addEventListener("click", closeModal);
+//////////////////////////////////////// /////////////////////////////////////////
 //======Open Button======//
-const openModal = () => {
+const openModal = (e) => {
+  e.preventDefault();
   modal.classList.remove("hidden");
   overlay.classList.remove("hidden");
 };
@@ -65,3 +48,13 @@ buttonOpenModal.forEach((btn) => {
   btn.addEventListener("click", openModal);
 });
 ////////////////////////////////////////////////////////////////////////////////
+//====== Scroll Button======//
+buttonScroll.addEventListener("click", function () {
+  // const scrollFeatures = section1Features.getBoundingClientRect();
+  // window.scrollTo(
+  //   scrollFeatures.left + window.pageXOffset,
+  //   scrollFeatures.top + window.pageYOffset
+  // );
+  section1Features.scrollIntoView({ behavior: "smooth" });
+});
+//////////////////////////////////////// ////////////////////////////////////////
