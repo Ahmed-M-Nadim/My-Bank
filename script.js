@@ -23,6 +23,11 @@ const section1Features = document.querySelector("#section--1");
 const section2Operations = document.querySelector("#section--2");
 const section3Testimonials = document.querySelector("#section--3");
 const navigationLink = document.querySelectorAll(".nav__link");
+const operationTabContainer = document.querySelector(
+  ".operations__tab-container"
+);
+const operationsTab = document.querySelectorAll(".operations__tab");
+const operationsContent = document.querySelectorAll(".operations__content");
 
 //////////////////////////////////////// ////////////////////////////////////////
 
@@ -66,5 +71,18 @@ navigationLink.forEach((lnk) => {
         .querySelector(`${lnkAtt}`)
         .scrollIntoView({ behavior: "smooth" });
     }
+  });
+});
+///////////////////////////////////////// ////////////////////////////////////////
+//======Operation Section======//
+operationsTab.forEach((operationTab, i) => {
+  operationTab.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    e.target.classList.add("operations__tab--active");
+    operationsContent.forEach((ope) =>
+      ope.classList.remove("operations__content--active")
+    );
+    operationsContent[i].classList.add("operations__content--active");
   });
 });

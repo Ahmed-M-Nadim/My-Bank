@@ -223,6 +223,7 @@ img {
   position: absolute;
   background-color: #283a74;
   clip-path: polygon(100% 83%, 85% 100%, 100% 100%);
+  z-index: 1001;
 }
 .numberA {
   position: relative;
