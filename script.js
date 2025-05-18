@@ -20,6 +20,9 @@ const buttonOpenModal = document.querySelectorAll(".btn--show-modal");
 const buttonCloseModal = document.querySelector(".btn--close-modal");
 const buttonScroll = document.querySelector(".btn--scroll-to");
 const section1Features = document.querySelector("#section--1");
+const section2Operations = document.querySelector("#section--2");
+const section3Testimonials = document.querySelector("#section--3");
+const navigationLink = document.querySelectorAll(".nav__link");
 
 //////////////////////////////////////// ////////////////////////////////////////
 
@@ -53,3 +56,15 @@ buttonScroll.addEventListener("click", () => {
   section1Features.scrollIntoView({ behavior: "smooth" });
 });
 //////////////////////////////////////// ////////////////////////////////////////
+//======Nav Link Navigation======//
+navigationLink.forEach((lnk) => {
+  let lnkAtt = lnk.getAttribute("href");
+  lnk.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (lnkAtt.includes("section")) {
+      document
+        .querySelector(`${lnkAtt}`)
+        .scrollIntoView({ behavior: "smooth" });
+    }
+  });
+});
