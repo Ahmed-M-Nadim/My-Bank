@@ -49,7 +49,7 @@ buttonOpenModal.forEach((btn) => {
 });
 ////////////////////////////////////////////////////////////////////////////////
 //====== Scroll Button======//
-buttonScroll.addEventListener("click", function () {
+buttonScroll.addEventListener("click", () => {
   section1Features.scrollIntoView({ behavior: "smooth" });
 });
 //////////////////////////////////////// ////////////////////////////////////////
