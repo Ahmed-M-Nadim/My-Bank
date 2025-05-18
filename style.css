@@ -190,6 +190,7 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
 
 .header__title {
@@ -204,6 +205,16 @@ img {
 
   align-items: start;
   justify-items: start;
+}
+
+.polygon {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: #283a74;
+  /* background-image: linear-gradient(to top left, #2a6266, #364f9e); */
+  clip-path: polygon(5% 50%, 0 0, 0 100%);
+  z-index: 3;
 }
 
 h1 {
