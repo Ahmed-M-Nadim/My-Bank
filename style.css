@@ -217,14 +217,13 @@ img {
   z-index: 3;
 }
 
-.forpol {
+/* .forpol {
   height: 100%;
   width: 100%;
   position: absolute;
   background-color: #283a74;
   clip-path: polygon(100% 83%, 85% 100%, 100% 100%);
-  z-index: 1001;
-}
+} */
 .numberA {
   position: relative;
 }
