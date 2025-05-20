@@ -23,6 +23,11 @@ const section1Features = document.querySelector("#section--1");
 const section2Operations = document.querySelector("#section--2");
 const section3Testimonials = document.querySelector("#section--3");
 const navigationLink = document.querySelectorAll(".nav__link");
+const operationTabContainer = document.querySelector(
+  ".operations__tab-container"
+);
+const operationsTabs = document.querySelectorAll(".operations__tab");
+const operationsContents = document.querySelectorAll(".operations__content");
 
 //////////////////////////////////////// ////////////////////////////////////////
 
@@ -70,3 +75,21 @@ navigationLink.forEach((lnk) => {
 });
 ///////////////////////////////////////// ////////////////////////////////////////
 //======Operation Section======//
+operationTabContainer.addEventListener("click", (e) => {
+  //=======TAB======//
+  const clickedTab = e.target.closest(".operations__tab");
+  const dataNum = e.target.getAttribute("data-tab");
+  operationsTabs.forEach((opTab) =>
+    opTab.classList.remove("operations__tab--active")
+  );
+
+  clickedTab.classList.add("operations__tab--active");
+  console.log(clickedTab);
+  //======Content======//
+  operationsContents.forEach((opCont) => {
+    opCont.classList.remove("operations__content--active");
+    if (opCont.classList.contains(`operations__content--${dataNum}`)) {
+      opCont.classList.add("operations__content--active");
+    }
+  });
+});
