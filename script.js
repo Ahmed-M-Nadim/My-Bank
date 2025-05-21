@@ -95,4 +95,4 @@ operationTabContainer.addEventListener("click", (e) => {
   });
 });
 //////////////////////////////////////// /////////////////////////////////////////
-//======NAV Fading======//
+//======NAV  link Fading out======//
