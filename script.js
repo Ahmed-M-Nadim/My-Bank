@@ -22,6 +22,7 @@ const buttonScroll = document.querySelector(".btn--scroll-to");
 const section1Features = document.querySelector("#section--1");
 const section2Operations = document.querySelector("#section--2");
 const section3Testimonials = document.querySelector("#section--3");
+const nav = document.querySelector(".nav");
 const navigationLink = document.querySelectorAll(".nav__link");
 const operationTabContainer = document.querySelector(
   ".operations__tab-container"
@@ -93,3 +94,5 @@ operationTabContainer.addEventListener("click", (e) => {
     }
   });
 });
+//////////////////////////////////////// /////////////////////////////////////////
+//======NAV Fading======//
