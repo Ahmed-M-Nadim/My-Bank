@@ -96,3 +96,34 @@ operationTabContainer.addEventListener("click", (e) => {
 });
 //////////////////////////////////////// /////////////////////////////////////////
 //======NAV  link Fading out======//
+nav.addEventListener("mouseover", (e) => {
+  if (e.target.classList.contains("nav__link")) {
+    const navOverTarget = e.target;
+    const otherNavOver = navOverTarget
+      .closest(".nav")
+      .querySelectorAll(".nav__link");
+    const logo = navOverTarget.closest(".nav").querySelector("img");
+    otherNavOver.forEach((navOver) => {
+      if (navOver !== navOverTarget) {
+        navOver.style.opacity = 0.5;
+        logo.style.opacity = 0.5;
+      }
+    });
+  }
+});
+
+nav.addEventListener("mouseout", (e) => {
+  if (e.target.classList.contains("nav__link")) {
+    const navOverTarget = e.target;
+    const otherNavOver = navOverTarget
+      .closest(".nav")
+      .querySelectorAll(".nav__link");
+    const logo = navOverTarget.closest(".nav").querySelector("img");
+    otherNavOver.forEach((navOver) => {
+      if (navOver !== navOverTarget) {
+        navOver.style.opacity = 1;
+        logo.style.opacity = 1;
+      }
+    });
+  }
+});
