@@ -20,6 +20,7 @@ const header = document.querySelector("header");
 const buttonOpenModal = document.querySelectorAll(".btn--show-modal");
 const buttonCloseModal = document.querySelector(".btn--close-modal");
 const buttonScroll = document.querySelector(".btn--scroll-to");
+const sections = document.querySelectorAll(".section");
 const section1Features = document.querySelector("#section--1");
 const section2Operations = document.querySelector("#section--2");
 const section3Testimonials = document.querySelector("#section--3");
@@ -153,16 +154,24 @@ const navObserver = Observer.observe(header);
 ////////////////////////////////////////////////////////////////////////////////
 //======Reveal Section using Intersection API on scrolling======//
 
-const sectionsCallBack = function (entries, observer) {};
+const sectionsCallBack = function (entries, observer) {
+  const [entry] = entries;
+  if (!entry.isIntersecting) return;
+  entry.target.classList.remove("section--hidden");
+};
 
 const sectionsObject = {
   root: null,
-  threshold: 0,
+  threshold: 0.15,
 };
 
 const sectionsObserver = new IntersectionObserver(
   sectionsCallBack,
   sectionsObject
 );
-const scrollObserver = sectionsObserver.observe();
+
+sections.forEach(function (section) {
+  sectionsObserver.observe(section);
+  section.classList.add("section--hidden");
+});
 /////////////////////////////////////////////////////////////////////////////////
