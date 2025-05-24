@@ -31,7 +31,7 @@ const operationTabContainer = document.querySelector(
 const operationsTabs = document.querySelectorAll(".operations__tab");
 const operationsContents = document.querySelectorAll(".operations__content");
 
-//////////////////////////////////////// ////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 
 //======Create Global Function For Modal======//
 //======Close Button======//
@@ -46,7 +46,7 @@ document.addEventListener("keydown", (e) => {
   }
 });
 overlay.addEventListener("click", closeModal);
-//////////////////////////////////////// /////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
 //======Open Button======//
 const openModal = (e) => {
   e.preventDefault();
@@ -62,7 +62,7 @@ buttonOpenModal.forEach((btn) => {
 buttonScroll.addEventListener("click", () => {
   section1Features.scrollIntoView({ behavior: "smooth" });
 });
-//////////////////////////////////////// ////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 //======Nav Link Navigation======//
 navigationLink.forEach((lnk) => {
   let lnkAtt = lnk.getAttribute("href");
@@ -75,7 +75,7 @@ navigationLink.forEach((lnk) => {
     }
   });
 });
-///////////////////////////////////////// ////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
 //======Operation Section======//
 operationTabContainer.addEventListener("click", (e) => {
   //=======TAB======//
@@ -95,7 +95,7 @@ operationTabContainer.addEventListener("click", (e) => {
     }
   });
 });
-//////////////////////////////////////// /////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
 //======NAV  link Fading out======//
 nav.addEventListener("mouseover", (e) => {
   if (e.target.classList.contains("nav__link")) {
@@ -128,7 +128,7 @@ nav.addEventListener("mouseout", (e) => {
     });
   }
 });
-///////////////////////////////////////// ////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
 //======Sticky Navigation======//
 const fixNav = function (entries, observer) {
   // const entry = entries[0];
@@ -145,9 +145,24 @@ const fixNav = function (entries, observer) {
 
 const fixObject = {
   root: null,
-  threshold: 0.2,
+  threshold: 0.125,
 };
 
 const Observer = new IntersectionObserver(fixNav, fixObject);
 const navObserver = Observer.observe(header);
-//////////////////////////////////////// ////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+//======Reveal Section using Intersection API on scrolling======//
+
+const sectionsCallBack = function (entries, observer) {};
+
+const sectionsObject = {
+  root: null,
+  threshold: 0,
+};
+
+const sectionsObserver = new IntersectionObserver(
+  sectionsCallBack,
+  sectionsObject
+);
+const scrollObserver = sectionsObserver.observe();
+/////////////////////////////////////////////////////////////////////////////////
