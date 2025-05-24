@@ -136,6 +136,7 @@ const fixNav = function (entries, observer) {
   entries.forEach((entry) => {
     if (!entry.isIntersecting) {
       nav.classList.add("sticky");
+      nav.style.transition = "all 0.2s";
     } else if (entry.isIntersecting) {
       nav.classList.remove("sticky");
     }
@@ -144,7 +145,7 @@ const fixNav = function (entries, observer) {
 
 const fixObject = {
   root: null,
-  threshold: 0.9,
+  threshold: 0.2,
 };
 
 const Observer = new IntersectionObserver(fixNav, fixObject);
