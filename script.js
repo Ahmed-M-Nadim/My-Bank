@@ -127,3 +127,18 @@ nav.addEventListener("mouseout", (e) => {
     });
   }
 });
+///////////////////////////////////////// ////////////////////////////////////////
+//======Sticky Navigation======//
+const fixNav = function (entries, observer) {
+  const entry = entries[0];
+  console.log(entry);
+};
+
+const fixObject = {
+  root: null,
+  threshold: 0.2,
+};
+
+const Observer = new IntersectionObserver(fixNav, fixObject);
+const navObserver = Observer(section1Features);
+//////////////////////////////////////// ////////////////////////////////////////
