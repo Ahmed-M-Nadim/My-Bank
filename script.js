@@ -16,6 +16,7 @@ console.log(myNewDay);
 //======Create Variable======//
 const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
+const header = document.querySelector("header");
 const buttonOpenModal = document.querySelectorAll(".btn--show-modal");
 const buttonCloseModal = document.querySelector(".btn--close-modal");
 const buttonScroll = document.querySelector(".btn--scroll-to");
@@ -130,15 +131,22 @@ nav.addEventListener("mouseout", (e) => {
 ///////////////////////////////////////// ////////////////////////////////////////
 //======Sticky Navigation======//
 const fixNav = function (entries, observer) {
-  const entry = entries[0];
-  console.log(entry);
+  // const entry = entries[0];
+  // console.log(entry);
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) {
+      nav.classList.add("sticky");
+    } else if (entry.isIntersecting) {
+      nav.classList.remove("sticky");
+    }
+  });
 };
 
 const fixObject = {
   root: null,
-  threshold: 0.2,
+  threshold: 0.9,
 };
 
 const Observer = new IntersectionObserver(fixNav, fixObject);
-const navObserver = Observer(section1Features);
+const navObserver = Observer.observe(header);
 //////////////////////////////////////// ////////////////////////////////////////
