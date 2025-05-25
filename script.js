@@ -31,6 +31,7 @@ const operationTabContainer = document.querySelector(
 );
 const operationsTabs = document.querySelectorAll(".operations__tab");
 const operationsContents = document.querySelectorAll(".operations__content");
+const featuresImages = document.querySelectorAll(".features__img");
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -175,3 +176,20 @@ sections.forEach(function (section) {
   section.classList.add("section--hidden");
 });
 /////////////////////////////////////////////////////////////////////////////////
+//======Change Image appearance in Features section======//
+const imageCallFunction = function (entries, observer) {
+  const [entry] = entries;
+  console.log(entry);
+  featuresImages.forEach((img) => {
+    img.src = img.dataSrc;
+    img.classList.remove("lazy-img");
+  });
+};
+
+const imageObject = {
+  root: null,
+  threshold: 0.2,
+};
+
+const Observer1 = new IntersectionObserver(imageCallFunction, imageObject);
+const imageObserver = Observer1.observe(featuresImages);
