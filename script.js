@@ -180,16 +180,17 @@ sections.forEach(function (section) {
 const imageCallFunction = function (entries, observer) {
   const [entry] = entries;
   console.log(entry);
-  featuresImages.forEach((img) => {
-    img.src = img.dataSrc;
-    img.classList.remove("lazy-img");
-  });
+  if (!entry.isIntersecting) return;
+  if (entry.isIntersecting) {
+    entry.target.src = entry.target.dataset.src;
+    entry.target.classList.remove("lazy-img");
+  }
 };
 
 const imageObject = {
   root: null,
-  threshold: 0.2,
+  threshold: 0.25,
 };
 
 const Observer1 = new IntersectionObserver(imageCallFunction, imageObject);
-const imageObserver = Observer1.observe(featuresImages);
+featuresImages.forEach((img) => Observer1.observe(img));
