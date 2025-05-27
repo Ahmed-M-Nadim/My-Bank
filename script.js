@@ -194,4 +194,4 @@ const imageObject = {
 
 const Observer1 = new IntersectionObserver(imageCallFunction, imageObject);
 featuresImages.forEach((img) => Observer1.observe(img));
-//======Slider======//
+//======Slider Section======//
