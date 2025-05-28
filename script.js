@@ -202,3 +202,11 @@ featuresImages.forEach((img) => Observer1.observe(img));
 slides.forEach((slide, i) => {
   slide.style.transform = `translateX(${i * 100}%)`;
 });
+
+btnSliderRight.addEventListener("click", (e) => {
+  e.preventDefault();
+  slides.forEach((slide, i) => {
+    i--;
+    slide.style.transform = `translateX(${i * 100}%)`;
+  });
+});
