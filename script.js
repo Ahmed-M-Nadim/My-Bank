@@ -32,6 +32,9 @@ const operationTabContainer = document.querySelector(
 const operationsTabs = document.querySelectorAll(".operations__tab");
 const operationsContents = document.querySelectorAll(".operations__content");
 const featuresImages = document.querySelectorAll(".features__img");
+const slides = document.querySelectorAll(".slide");
+const btnSliderLeft = document.querySelector(".slider__btn--left");
+const btnSliderRight = document.querySelector(".slider__btn--right");
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -194,4 +197,8 @@ const imageObject = {
 
 const Observer1 = new IntersectionObserver(imageCallFunction, imageObject);
 featuresImages.forEach((img) => Observer1.observe(img));
+////////////////////////////////////////////////////////////////////////////////
 //======Slider Section======//
+slides.forEach((slide, i) => {
+  slide.style.transform = `translateX(${i * 100}%)`;
+});
