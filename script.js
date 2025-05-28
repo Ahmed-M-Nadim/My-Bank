@@ -205,6 +205,8 @@ slides.forEach((slide, i) => {
   slide.style.transform = `translateX(${i * 100}%)`;
 });
 
+//======Sliding to the right======//
+
 btnSliderRight.addEventListener("click", (e) => {
   e.preventDefault();
   if (currentS === maxSlide) {
@@ -212,6 +214,20 @@ btnSliderRight.addEventListener("click", (e) => {
   } else {
     currentS++;
   }
+  slides.forEach((slide, i) => {
+    slide.style.transform = `translateX(${(i - currentS) * 100}%)`;
+  });
+});
+//======Sliding to the Left======//
+
+btnSliderLeft.addEventListener("click", (e) => {
+  e.preventDefault();
+  if (currentS === 0) {
+    currentS = maxSlide - 1;
+  } else {
+    currentS--;
+  }
+
   slides.forEach((slide, i) => {
     slide.style.transform = `translateX(${(i - currentS) * 100}%)`;
   });
