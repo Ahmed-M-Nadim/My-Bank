@@ -199,14 +199,20 @@ const Observer1 = new IntersectionObserver(imageCallFunction, imageObject);
 featuresImages.forEach((img) => Observer1.observe(img));
 ////////////////////////////////////////////////////////////////////////////////
 //======Slider Section======//
+let currentS = 0;
+const maxSlide = slides.length - 1;
 slides.forEach((slide, i) => {
   slide.style.transform = `translateX(${i * 100}%)`;
 });
 
 btnSliderRight.addEventListener("click", (e) => {
   e.preventDefault();
+  if (currentS === maxSlide) {
+    currentS = 0;
+  } else {
+    currentS++;
+  }
   slides.forEach((slide, i) => {
-    i--;
-    slide.style.transform = `translateX(${i * 100}%)`;
+    slide.style.transform = `translateX(${(i - currentS) * 100}%)`;
   });
 });
